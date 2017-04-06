@@ -1,5 +1,7 @@
 Spree::Core::Engine.add_routes do
   namespace :admin, path: Spree.admin_path do
+    patch '/addresses/shipment/:shipment_id', to: "addresses#attach_shipment", as: :shipment_address
+
     resources :promotions do
       resources :promotion_rules
       resources :promotion_actions

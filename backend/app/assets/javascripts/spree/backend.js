@@ -14,7 +14,7 @@
 
 //= require spree
 //= require spree/backend/spree-select2
-//= require spree/backend/address_states
+//= require spree/backend/country_states
 //= require spree/backend/adjustments
 //= require spree/backend/admin
 //= require spree/backend/calculator
