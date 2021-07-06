@@ -44,7 +44,7 @@ module Spree
       create(:stock_location)
 
       @shipping_method = create(:shipping_method, zones: [country_zone])
-      @payment_method = create(:credit_card_payment_method)
+      @credit_card_payment_method = create(:credit_card_payment_method)
     end
 
     after do
@@ -188,9 +188,9 @@ module Spree
         allow_any_instance_of(Spree::PaymentMethod).to receive(:source_required?).and_return(false)
         order.update_column(:state, 'payment')
         api_put :update, id: order.to_param, order_token: order.token,
-                         order: { payments_attributes: [{ payment_method_id: @payment_method.id }] }
+                         order: { payments_attributes: [{ payment_method_id: @credit_card_payment_method.id }] }
         expect(json_response['state']).to eq('confirm')
-        expect(json_response['payments'][0]['payment_method']['name']).to eq(@payment_method.name)
+        expect(json_response['payments'][0]['payment_method']['name']).to eq(@credit_card_payment_method.name)
         expect(json_response['payments'][0]['amount']).to eq(order.total.to_s)
         expect(response.status).to eq(200)
       end
@@ -205,9 +205,14 @@ module Spree
           name: 'Spree Commerce'
         }
 
-        api_put :update, id: order.to_param, order_token: order.token,
-                         order: { payments_attributes: [{ payment_method_id: @payment_method.id.to_s, source_attributes: source_attributes }] }
-        expect(json_response['payments'][0]['payment_method']['name']).to eq(@payment_method.name)
+        api_put(
+          :update,
+          id: order.to_param,
+          order_token: order.token,
+          order: { payments_attributes: [{ payment_method_id: @credit_card_payment_method.id.to_s, source_attributes: source_attributes }] }
+        )
+
+        expect(json_response['payments'][0]['payment_method']['name']).to eq(@credit_card_payment_method.name)
         expect(json_response['payments'][0]['amount']).to eq(order.total.to_s)
         expect(response.status).to eq(200)
       end
@@ -216,10 +221,10 @@ module Spree
         order.update_column(:state, 'payment')
         api_put :update, id: order.to_param, order_token: order.token,
                          order: {
-                           payments_attributes: [{ payment_method_id: @payment_method.id }]
+                           payments_attributes: [{ payment_method_id: @credit_card_payment_method.id }]
                          },
                          payment_source: {
-                           @payment_method.id.to_s => { name: 'Spree' }
+                           @credit_card_payment_method.id.to_s => { name: 'Spree' }
                          }
 
         expect(response.status).to eq(422)
@@ -232,13 +237,40 @@ module Spree
 
       it 'allow users to reuse a credit card' do
         order.update_column(:state, 'payment')
-        credit_card = create(:credit_card, user_id: order.user_id, payment_method_id: @payment_method.id)
+        credit_card = create(:credit_card, user_id: order.user_id, payment_method_id: @credit_card_payment_method.id)
 
-        api_put :update, id: order.to_param, order_token: order.token,
-                         order: { existing_card: credit_card.id }
+        api_put(
+          :update, id:
+          order.to_param,
+                   order_token: order.token,
+                   order: {
+                     existing_card: credit_card.id,
+                     payments_attributes: [{ payment_method_id: @credit_card_payment_method.id }]
+                   }
+        )
 
         expect(response.status).to eq 200
         expect(order.credit_cards).to match_array [credit_card]
+      end
+
+      it 'allow users to use check as payment method' do
+        check_payment_method = create(:check_payment_method)
+
+        order.update_column(:state, 'payment')
+        credit_card = create(:credit_card, user_id: order.user_id, payment_method_id: @credit_card_payment_method.id)
+
+        api_put(
+          :update,
+          id: order.to_param,
+          order_token: order.token,
+          order: {
+            existing_card: credit_card.id,
+            payments_attributes: [{ payment_method_id: check_payment_method.id }]
+          }
+        )
+
+        expect(response.status).to eq 200
+        expect(order.payments.last.payment_method_id).to eq(check_payment_method.id)
       end
 
       it 'can transition from confirm to complete' do
@@ -293,7 +325,7 @@ module Spree
       it 'can apply a coupon code to an order' do
         order.update_column(:state, 'payment')
         expect(PromotionHandler::Coupon).to receive(:new).with(order).and_call_original
-        expect_any_instance_of(PromotionHandler::Coupon).to receive(:apply).and_return(coupon_applied?: true)
+        allow_any_instance_of(PromotionHandler::Coupon).to receive(:apply).and_return(coupon_applied?: true)
         api_put :update, id: order.to_param, order_token: order.token, order: { coupon_code: 'foobar' }
       end
 
