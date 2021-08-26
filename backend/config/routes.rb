@@ -197,6 +197,7 @@ Spree::Core::Engine.add_routes do
         end
       end
     end
+    resources :menu_locations
 
     get '/forbidden', to: 'errors#forbidden', as: :forbidden
   end
