@@ -1454,7 +1454,7 @@ paths:
                           height: null
                           width: null
                           depth: null
-                          is_master: false
+                          is_primary: false
                           options_text: 'Color: white, Size: XS'
                           slug: knitted-high-neck-sweater
                           description: Ipsam non accusamus aut est laborum at quia quos. Illum facilis mollitia fugit laborum. Eum sit sed similique optio et aut aperiam rerum. Vitae dolores consectetur rem voluptatem.
@@ -1954,7 +1954,7 @@ paths:
                           height: null
                           width: null
                           depth: null
-                          is_master: false
+                          is_primary: false
                           options_text: 'Color: white, Size: S'
                           slug: knitted-high-neck-sweater
                           description: Ipsam non accusamus aut est laborum at quia quos. Illum facilis mollitia fugit laborum. Eum sit sed similique optio et aut aperiam rerum. Vitae dolores consectetur rem voluptatem.
@@ -1988,7 +1988,7 @@ paths:
                           height: null
                           width: null
                           depth: null
-                          is_master: false
+                          is_primary: false
                           options_text: 'Color: white, Size: M'
                           slug: knitted-high-neck-sweater
                           description: Ipsam non accusamus aut est laborum at quia quos. Illum facilis mollitia fugit laborum. Eum sit sed similique optio et aut aperiam rerum. Vitae dolores consectetur rem voluptatem.
@@ -2022,7 +2022,7 @@ paths:
                           height: null
                           width: null
                           depth: null
-                          is_master: false
+                          is_primary: false
                           options_text: 'Color: white, Size: L'
                           slug: knitted-high-neck-sweater
                           description: Ipsam non accusamus aut est laborum at quia quos. Illum facilis mollitia fugit laborum. Eum sit sed similique optio et aut aperiam rerum. Vitae dolores consectetur rem voluptatem.
@@ -2056,7 +2056,7 @@ paths:
                           height: null
                           width: null
                           depth: null
-                          is_master: false
+                          is_primary: false
                           options_text: 'Color: white, Size: XL'
                           slug: knitted-high-neck-sweater
                           description: Ipsam non accusamus aut est laborum at quia quos. Illum facilis mollitia fugit laborum. Eum sit sed similique optio et aut aperiam rerum. Vitae dolores consectetur rem voluptatem.
@@ -2090,7 +2090,7 @@ paths:
                           height: null
                           width: null
                           depth: null
-                          is_master: false
+                          is_primary: false
                           options_text: 'Color: blue, Size: XS'
                           slug: knitted-high-neck-sweater
                           description: Ipsam non accusamus aut est laborum at quia quos. Illum facilis mollitia fugit laborum. Eum sit sed similique optio et aut aperiam rerum. Vitae dolores consectetur rem voluptatem.
@@ -2126,7 +2126,7 @@ paths:
                           height: null
                           width: null
                           depth: null
-                          is_master: false
+                          is_primary: false
                           options_text: 'Color: blue, Size: S'
                           slug: knitted-high-neck-sweater
                           description: Ipsam non accusamus aut est laborum at quia quos. Illum facilis mollitia fugit laborum. Eum sit sed similique optio et aut aperiam rerum. Vitae dolores consectetur rem voluptatem.
@@ -2162,7 +2162,7 @@ paths:
                           height: null
                           width: null
                           depth: null
-                          is_master: false
+                          is_primary: false
                           options_text: 'Color: blue, Size: M'
                           slug: knitted-high-neck-sweater
                           description: Ipsam non accusamus aut est laborum at quia quos. Illum facilis mollitia fugit laborum. Eum sit sed similique optio et aut aperiam rerum. Vitae dolores consectetur rem voluptatem.
@@ -2198,7 +2198,7 @@ paths:
                           height: null
                           width: null
                           depth: null
-                          is_master: false
+                          is_primary: false
                           options_text: 'Color: blue, Size: L'
                           slug: knitted-high-neck-sweater
                           description: Ipsam non accusamus aut est laborum at quia quos. Illum facilis mollitia fugit laborum. Eum sit sed similique optio et aut aperiam rerum. Vitae dolores consectetur rem voluptatem.
@@ -2234,7 +2234,7 @@ paths:
                           height: null
                           width: null
                           depth: null
-                          is_master: false
+                          is_primary: false
                           options_text: 'Color: blue, Size: XL'
                           slug: knitted-high-neck-sweater
                           description: Ipsam non accusamus aut est laborum at quia quos. Illum facilis mollitia fugit laborum. Eum sit sed similique optio et aut aperiam rerum. Vitae dolores consectetur rem voluptatem.
@@ -2270,7 +2270,7 @@ paths:
                           height: null
                           width: null
                           depth: null
-                          is_master: false
+                          is_primary: false
                           options_text: 'Color: pink, Size: XS'
                           slug: knitted-high-neck-sweater
                           description: Ipsam non accusamus aut est laborum at quia quos. Illum facilis mollitia fugit laborum. Eum sit sed similique optio et aut aperiam rerum. Vitae dolores consectetur rem voluptatem.
@@ -2306,7 +2306,7 @@ paths:
                           height: null
                           width: null
                           depth: null
-                          is_master: false
+                          is_primary: false
                           options_text: 'Color: pink, Size: S'
                           slug: knitted-high-neck-sweater
                           description: Ipsam non accusamus aut est laborum at quia quos. Illum facilis mollitia fugit laborum. Eum sit sed similique optio et aut aperiam rerum. Vitae dolores consectetur rem voluptatem.
@@ -2342,7 +2342,7 @@ paths:
                           height: null
                           width: null
                           depth: null
-                          is_master: false
+                          is_primary: false
                           options_text: 'Color: pink, Size: M'
                           slug: knitted-high-neck-sweater
                           description: Ipsam non accusamus aut est laborum at quia quos. Illum facilis mollitia fugit laborum. Eum sit sed similique optio et aut aperiam rerum. Vitae dolores consectetur rem voluptatem.
@@ -2378,7 +2378,7 @@ paths:
                           height: null
                           width: null
                           depth: null
-                          is_master: false
+                          is_primary: false
                           options_text: 'Color: pink, Size: L'
                           slug: knitted-high-neck-sweater
                           description: Ipsam non accusamus aut est laborum at quia quos. Illum facilis mollitia fugit laborum. Eum sit sed similique optio et aut aperiam rerum. Vitae dolores consectetur rem voluptatem.
@@ -2414,7 +2414,7 @@ paths:
                           height: null
                           width: null
                           depth: null
-                          is_master: false
+                          is_primary: false
                           options_text: 'Color: pink, Size: XL'
                           slug: knitted-high-neck-sweater
                           description: Ipsam non accusamus aut est laborum at quia quos. Illum facilis mollitia fugit laborum. Eum sit sed similique optio et aut aperiam rerum. Vitae dolores consectetur rem voluptatem.
@@ -14486,7 +14486,7 @@ components:
         depth:
           type: string
           example: '10'
-        is_master:
+        is_primary:
           type: boolean
           example: false
           description: Indicates if Variant is the master Variant
