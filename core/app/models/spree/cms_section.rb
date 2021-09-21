@@ -36,6 +36,7 @@ module Spree
     TYPES = ['Spree::Cms::Sections::HeroImage',
              'Spree::Cms::Sections::FeaturedArticle',
              'Spree::Cms::Sections::ProductCarousel',
+             'Spree::Cms::Sections::ImageCarousel',
              'Spree::Cms::Sections::ImageGallery',
              'Spree::Cms::Sections::SideBySideImages',
              'Spree::Cms::Sections::RichTextContent']
