@@ -134,7 +134,7 @@ module Spree
       return [] if rules.none?
 
       specific_rules = rules.select { |rule| rule.applicable?(promotable) }
-      return [] if specific_rules.none?
+      return if specific_rules.none?
 
       rule_eligibility = Hash[specific_rules.map do |rule|
         [rule, rule.eligible?(promotable, options)]
