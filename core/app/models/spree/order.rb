@@ -577,8 +577,7 @@ module Spree
       transaction do
         cancel!
         update_columns(
-          canceler_id: user.id,
-          canceled_at: Time.current
+          canceler_id: user.id
         )
       end
     end
@@ -724,8 +723,11 @@ module Spree
       # Free up authorized store credits
       payments.store_credits.pending.each(&:void!)
 
-      send_cancel_email
+      send_cancel_email   
       update_with_updater!
+      update_columns(
+        canceled_at: Time.current,
+      )         
     end
 
     def after_resume
